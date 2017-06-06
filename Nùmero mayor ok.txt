@@ -1,0 +1,10 @@
+Mayor número en $FF
+
+LDA $EE;
+LDX $EF;
+CMP $EF;
+JNC $0B;
+STA $FF;
+JMP $0D;;
+STX $FF;
+HLT;

@@ -1,0 +1,26 @@
+LDA $FA;
+CMP #0;
+STA $FF;
+       JZ $0F;
+LDA $FB;
+CMP #0;
+LDA #1;
+STA $FF;
+       JZ $1F;
+LDA $FA;
+STA $FF  
+LDA $FB;
+STA $F1;
+      LDA $F1;
+      DCA;
+      STA $F1;
+      CMP #0;
+      JZ $2C;
+              LDA #0;
+              LDX $FA;
+                ADD $FF; 
+                DCX;
+                JNZ $24;
+      STA $FF;
+      JMP $18;
+HLT;

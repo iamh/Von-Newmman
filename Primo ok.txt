@@ -1,0 +1,60 @@
+  LDA $FA;
+  LDX #0;
+  CMP #1;
+JZ $0E;                       salto no primo
+  CMP #2;
+JZ $14;                       salto primo 
+           SUB #2;            salto bucle 1
+           CMP #0;
+           JZ $15;            salto si el numero es par (no primo) 
+           CMP #1;
+           JZ $16;            salto si el numero es impar LDA #3
+           JMP $0A;           salto bucle 1 
+JZ $1E;                       exit primo 1 
+JZ $22;                       exit no primo 2  
+  LDA #3;                     
+  STA $FB;
+       LDA $FA;               salto bucle 2 
+       CMP $FB;
+       JZ $21;                salto primo
+       JMP $23;               salto continuedad LDA$FB
+JZ $27;                       exit primo  
+JZ $30;                       exit no primo 
+       LDA $FB;               
+       CMP #17;
+       JZ $33;                salto primo 
+             LDA #0;          
+             STA $FD;
+               LDA $FD;       salto bucle 3
+               CMP $FA;         
+               JZ $34;        salto no primo 
+               JMP $35;       salto continuedad ADD $FB
+JZ $42;                       exit primo   
+JZ $43;                       exit no primo
+               ADD $FB;       
+               STA $FD;
+                  LDA  $FA;
+                  LDX  $FD;   asigno el número en X 
+                  CMP $FD;    comparador en X
+                  JNC $46;    salto del comparador si el numero es mayor (termina buble) LDA $FB
+               JMP $44;       salto continuedad JMP $2C
+JZ $4E;                       exit primo  
+JZ $53;                       exit no primo 
+               JMP $2C;       salto bucle 3
+       LDA $FB;               
+       INA;
+       INA;
+       STA $FB;
+       JMP $1A;               salto bucle 2 
+  LDA #1;                     asignacion primo
+  STA $FF;
+JZ $57;                       salto HLT
+  LDA #0;                     asignacion no primo
+  STA $FF;
+HLT;
+
+LOS exit con conductos de salida para cada comparación u operación si el número es primo o no
+Bucle 1 me dice si es número es par o impar con una sencilla resta a 2 si me da 0 es par (no primo) si me 1 es impar y continuo la operación para determinar si es primo
+Bucle 2 para empezar a buscar si el número es primo lo que busco es si el número es divisor para algun número por lo tanto empiezo la asignacion en 3 y voy incrementando 2 para continuar la busqueda en 5,7,9,11,13....
+bucle 3 empieza la busqueda si es divisor para algún númer..ejemplo empieza en 3+3+3+3+3 hasta encontrar el numero asignado si lo encuentra es (no primo) y si no le ecuentra pasa al sigguiente busqueda 5+5+5+5 y asi....
+COMPARADOR MAYOR la busqueda termina cuando mi comparador que esta en X es mayor que el número asignado y pasa al siguiente busqueda DEL 3 AL 5,7,9,11,13.... 

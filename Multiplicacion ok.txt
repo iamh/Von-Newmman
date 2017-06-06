@@ -1,0 +1,15 @@
+LDA $AB;
+CMP #0;
+JZ $0F;
+       DX $AB;  
+       LDA $AA;
+           ADD $AA; 
+           STA $FF;  
+           DCX;
+           JNZ $09;
+LDA $FF;
+STA #0;
+HLT; 
+
+AA, AB VARIABLES
+FF RESPUESTA
