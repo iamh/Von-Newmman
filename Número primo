@@ -34,7 +34,7 @@ JZ $43;                       exit no primo
                ADD $FB;       
                STA $FD;
                   LDA  $FA;
-                  LDX  $FD;   asigno el número en X 
+                  LDX  $FD;   asigno el nÃºmero en X 
                   CMP $FD;    comparador en X
                   JNC $46;    salto del comparador si el numero es mayor (termina buble) LDA $FB
                JMP $44;       salto continuedad JMP $2C
@@ -53,8 +53,8 @@ JZ $57;                       salto HLT
   STA $FF;
 HLT;
 
-LOS exit con conductos de salida para cada comparación u operación si el número es primo o no
-Bucle 1 me dice si es número es par o impar con una sencilla resta a 2 si me da 0 es par (no primo) si me 1 es impar y continuo la operación para determinar si es primo
-Bucle 2 para empezar a buscar si el número es primo lo que busco es si el número es divisor para algun número por lo tanto empiezo la asignacion en 3 y voy incrementando 2 para continuar la busqueda en 5,7,9,11,13....
-bucle 3 empieza la busqueda si es divisor para algún númer..ejemplo empieza en 3+3+3+3+3 hasta encontrar el numero asignado si lo encuentra es (no primo) y si no le ecuentra pasa al sigguiente busqueda 5+5+5+5 y asi....
-COMPARADOR MAYOR la busqueda termina cuando mi comparador que esta en X es mayor que el número asignado y pasa al siguiente busqueda DEL 3 AL 5,7,9,11,13.... 
+LOS exit con conductos de salida para cada comparaciÃ³n u operaciÃ³n si el nÃºmero es primo o no
+Bucle 1 me dice si es nÃºmero es par o impar con una sencilla resta a 2 si me da 0 es par (no primo) si me 1 es impar y continuo la operaciÃ³n para determinar si es primo
+Bucle 2 para empezar a buscar si el nÃºmero es primo lo que busco es si el nÃºmero es divisor para algun nÃºmero por lo tanto empiezo la asignacion en 3 y voy incrementando 2 para continuar la busqueda en 5,7,9,11,13....
+bucle 3 empieza la busqueda si es divisor para algÃºn nÃºmer..ejemplo empieza en 3+3+3+3+3 hasta encontrar el numero asignado si lo encuentra es (no primo) y si no le ecuentra pasa al sigguiente busqueda 5+5+5+5 y asi....
+COMPARADOR MAYOR la busqueda termina cuando mi comparador que esta en X es mayor que el nÃºmero asignado y pasa al siguiente busqueda DEL 3 AL 5,7,9,11,13.... 
