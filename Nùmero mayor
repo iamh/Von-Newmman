@@ -1,4 +1,4 @@
-Mayor número en $FF
+Mayor nÃºmero en $FF
 
 LDA $EE;
 LDX $EF;
